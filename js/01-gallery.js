@@ -3,7 +3,7 @@ import { galleryItems } from './gallery-items.js';
 
 // Создание и рендер разметки по массиву данных galleryItems и предоставленному шаблону элемента галереи.
 
-const createGalleryCardMarkup = galleryItems.map(({ preview, original, description }) => `<div class="gallery__item">
+const markup = galleryItems.map(({ preview, original, description }) => `<div class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
@@ -15,7 +15,8 @@ const createGalleryCardMarkup = galleryItems.map(({ preview, original, descripti
 </div>`).join('');
 
 const galleryList = document.querySelector('.gallery');
-galleryList.insertAdjacentHTML("afterbegin", createGalleryCardMarkup);
+
+galleryList.insertAdjacentHTML("afterbegin", markup);
 
 // Реализация делегирования на div.gallery и получение url большого изображения.
 
@@ -52,4 +53,4 @@ function onGalleryContainerClick(event) {
 }
 
 
-// console.log(galleryItems);
+console.log(galleryItems);
