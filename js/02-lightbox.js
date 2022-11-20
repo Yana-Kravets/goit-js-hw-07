@@ -35,6 +35,7 @@ function onGalleryContainerClick(event) {
   )}" alt="${event.target.getAttribute("alt")}"/></a>
    </div>
     `; 
+};
 
 let gallery = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
