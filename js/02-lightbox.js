@@ -22,11 +22,27 @@ function onGalleryContainerClick(event) {
     // ----SimpleLightbox----
 
 
-    new SimpleLightbox('.gallery a', {
-        captionDelay: 250
-    });
+    `<div class="gallery">
+    <a href="${event.target.getAttribute(
+      "href"
+    )}"><img src="${event.target.getAttribute(
+    "src"
+  )}" alt="${event.target.getAttribute("alt")}" /></a>
+    <a href="${event.target.getAttribute(
+      "href"
+    )}"><img src="${event.target.getAttribute(
+    "src"
+  )}" alt="${event.target.getAttribute("alt")}"/></a>
+   </div>
+    `; 
 
-}
+let gallery = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+  showCounter: false,
+});
+
+gallery.on("show.simplelightbox");
 
 
 console.log(galleryItems);
